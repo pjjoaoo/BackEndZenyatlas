@@ -1,0 +1,149 @@
+@baseUrl = http://localhost:8080
+@token = <eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJpZCI6MSwic3ViIjoiYWRtaW5AemVueWF0bGFzLmNvbSIsImlhdCI6MTc4MDk2ODcyNSwiZXhwIjoxNzgxMDU1MTI1fQ.9QGTRCn5kVv35XhJx9KW7Aa_kKO5B1mOcnWwqR9Vrsw>
+
+### ==================== AUTH ====================
+
+### Login
+POST {{baseUrl}}/api/v1/auth/authenticate
+Content-Type: application/json
+
+{
+  "email": "admin@zenyatlas.com",
+  "senha": "12345678"
+}
+
+### Registrar usuário
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "nome": "Nome Completo",
+  "email": "usuario@email.com",
+  "senha": "senha123",
+  "tipoUsuario": "CLIENTE"
+}
+
+### ==================== CLIENTES ====================
+
+### Cadastrar cliente
+POST {{baseUrl}}/api/v1/clientes
+Content-Type: application/json
+
+{
+  "nome": "Nome Cliente",
+  "email": "cliente@email.com",
+  "senha": "senha123"
+}
+
+### Listar pedidos do cliente
+GET {{baseUrl}}/api/v1/clientes/1/pedidos
+Authorization: Bearer {{token}}
+
+### ==================== PEDIDOS ====================
+
+### Criar pedido
+POST {{baseUrl}}/api/v1/pedidos
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "clienteId": 1,
+  "destinoId": 1,
+  "formaPagamento": 150.00
+}
+
+### Listar pedidos por cliente
+GET {{baseUrl}}/api/v1/pedidos/cliente/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJpZCI6MSwic3ViIjoiYWRtaW5AemVueWF0bGFzLmNvbSIsImlhdCI6MTc4MDk2ODcyNSwiZXhwIjoxNzgxMDU1MTI1fQ.9QGTRCn5kVv35XhJx9KW7Aa_kKO5B1mOcnWwqR9Vrsw
+
+### ==================== DESTINOS ====================
+
+### Listar destinos ativos
+GET {{baseUrl}}/destinos
+
+### Buscar destino por ID
+GET {{baseUrl}}/destinos/5
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJpZCI6MSwic3ViIjoiYWRtaW5AemVueWF0bGFzLmNvbSIsImlhdCI6MTc4MDk2ODcyNSwiZXhwIjoxNzgxMDU1MTI1fQ.9QGTRCn5kVv35XhJx9KW7Aa_kKO5B1mOcnWwqR9Vrsw
+
+### Criar destino
+POST {{baseUrl}}/destinos
+Content-Type: application/json
+
+{
+  "nome": "Belgica",
+  "descricao": "Kevin de Bruyne",
+  "aereo": "Qatar Air",
+  "preco": 5000.00,
+  "saida": "2025-12-11",
+  "imagem": "paris.jpg",
+  "ativo": true
+}
+
+### Atualizar destino
+PUT {{baseUrl}}/destinos/3
+Content-Type: application/json
+
+{
+  "nome": "Belgica",
+  "descricao": "Kevin de Bruyne",
+  "aereo": "LATAM",
+  "preco": 4700.00,
+  "saida": "2025-12-15",
+  "imagem": "https://share.google/eLmGXo8LDB3pdc6C8",
+  "ativo": true
+}
+
+### ==================== USUÁRIOS ====================
+
+### Listar usuários
+GET {{baseUrl}}/usuarios
+
+### Buscar usuário por ID
+GET {{baseUrl}}/usuarios/1
+
+### Criar usuário
+POST {{baseUrl}}/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Nome",
+  "email": "email@email.com",
+  "senha": "senha123",
+  "tipoUsuario": "CLIENTE"
+}
+
+### ==================== ADMINS ====================
+
+### Listar admins
+GET {{baseUrl}}/admins
+Authorization: Bearer {{token}}
+
+### Criar admin
+POST {{baseUrl}}/admins
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Admin",
+  "email": "admin@email.com",
+  "senha": "admin123",
+  "tipoUsuario": "ADMIN"
+}
+
+### ==================== FUNCIONÁRIOS ====================
+
+### Listar funcionários
+GET {{baseUrl}}/funcionarios
+Authorization: Bearer {{token}}
+
+### Criar funcionário
+POST {{baseUrl}}/funcionarios
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "nome": "Funcionário",
+  "email": "func@email.com",
+  "senha": "func123",
+  "tipoUsuario": "FUNCIONARIO"
+}

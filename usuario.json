@@ -1,0 +1,9 @@
+{
+  "nome": "Maria Oliveira",
+  "email": "maria.oliveira@email.com",
+  "senha": "senhaSegura123",
+  "tipo": "cliente",
+  "nascimento": "1995-08-20",
+  "cpf": "111.222.333-44",
+  "cep": "02002-000"
+}

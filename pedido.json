@@ -1,0 +1,10 @@
+{
+  "metodoPagamento": "PIX",
+  "status": "pago",
+  "usuario": {
+    "id": 1
+  },
+  "destino": {
+    "id": 1
+  }
+}

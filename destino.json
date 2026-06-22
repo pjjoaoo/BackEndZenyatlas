@@ -1,0 +1,9 @@
+{
+  "nome": "Pacote Fernando de Noronha",
+  "imagem": "https://exemplo.com/imagens/noronha.jpg",
+  "descricao": "5 dias incríveis com passeios de barco, mergulho e café da manhã incluso.",
+  "preco": 3500.50,
+  "aereo": "Voo direto saindo de São Paulo (GOL)",
+  "saida": "2024-12-10",
+  "ativo": true
+}
