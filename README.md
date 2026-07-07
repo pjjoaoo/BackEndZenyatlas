@@ -26,7 +26,7 @@ Zenyatlas é uma plataforma completa de backend que oferece funcionalidades para
 
 ## 📦 Dependências Principais
 
-```xml
+xml
 - springdoc-openapi-starter-webmvc-ui (2.5.0)
 - spring-boot-starter-validation
 - spring-boot-starter-web
